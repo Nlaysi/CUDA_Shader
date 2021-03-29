@@ -1,0 +1,51 @@
+typedef char __nv_bool;
+#line 193 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\vcruntime.h"
+typedef unsigned long long size_t;
+#include "crt/device_runtime.h"
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#line 2 "C:/Users/Иван/source/repos/Shaders/add.cu"
+___device__(extern  __no_sc__) unsigned char add(int);
+#line 7 "C:/Users/Иван/source/repos/Shaders/add.cu"
+__global__ __var_used__ extern void mult(int, unsigned char *);
+#include "common_functions.h"
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#line 2 "C:/Users/Иван/source/repos/Shaders/add.cu"
+___device__( __no_sc__) unsigned char add(
+#line 2 "C:/Users/Иван/source/repos/Shaders/add.cu"
+int a){
+#line 2 "C:/Users/Иван/source/repos/Shaders/add.cu"
+{
+#line 3 "C:/Users/Иван/source/repos/Shaders/add.cu"
+return (unsigned char)(a % 256);
+#line 4 "C:/Users/Иван/source/repos/Shaders/add.cu"
+}}
+#line 7 "C:/Users/Иван/source/repos/Shaders/add.cu"
+__global__ __var_used__ void mult(
+#line 7 "C:/Users/Иван/source/repos/Shaders/add.cu"
+int d, 
+#line 7 "C:/Users/Иван/source/repos/Shaders/add.cu"
+unsigned char *arr){
+#line 7 "C:/Users/Иван/source/repos/Shaders/add.cu"
+{
+#line 8 "C:/Users/Иван/source/repos/Shaders/add.cu"
+ int __cuda_local_var_298654_9_non_const_x;
+#line 9 "C:/Users/Иван/source/repos/Shaders/add.cu"
+ int __cuda_local_var_298655_9_non_const_y;
+#line 8 "C:/Users/Иван/source/repos/Shaders/add.cu"
+__cuda_local_var_298654_9_non_const_x = ((int)(((blockIdx.x) * (blockDim.x)) + (threadIdx.x)));
+#line 9 "C:/Users/Иван/source/repos/Shaders/add.cu"
+__cuda_local_var_298655_9_non_const_y = ((int)(((blockIdx.y) * (blockDim.y)) + (threadIdx.y)));
+#line 10 "C:/Users/Иван/source/repos/Shaders/add.cu"
+(arr[((__cuda_local_var_298655_9_non_const_y * 1920) + __cuda_local_var_298654_9_non_const_x)]) = (add((__cuda_local_var_298654_9_non_const_x + d))); 
+#line 11 "C:/Users/Иван/source/repos/Shaders/add.cu"
+}}

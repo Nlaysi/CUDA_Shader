@@ -1,0 +1,1033 @@
+typedef char __nv_bool;
+#line 6 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector;
+#line 13 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Object;
+#line 28 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+union Data;
+#line 33 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct DistanceDate;
+#line 193 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\vcruntime.h"
+typedef unsigned long long size_t;
+#include "crt/device_runtime.h"
+#line 61 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\vadefs.h"
+typedef unsigned long long uintptr_t;
+#line 6 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector {
+#line 8 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+double x;
+#line 9 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+double y;
+#line 10 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+double z;};
+#line 13 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Object {
+#line 15 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+unsigned char Type;
+#line 16 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+unsigned char R;
+#line 17 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+unsigned char G;
+#line 18 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+unsigned char B;
+#line 19 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+unsigned char atr1;
+#line 20 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+unsigned char atr2;
+#line 21 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+unsigned char atr3;
+#line 22 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+unsigned char atr4;
+#line 23 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector position;
+#line 24 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector size;
+#line 25 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+double r;};
+#line 28 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+union Data {
+#line 29 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Object obj;
+#line 30 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+unsigned char bytes[64];};
+#line 33 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct DistanceDate {
+#line 34 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+double distanceValue;
+#line 35 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+unsigned char r;
+#line 35 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+unsigned char g;
+#line 35 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+unsigned char b;char __nv_no_debug_dummy_end_padding_0[5];};
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#line 478 "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt\\corecrt_math.h"
+ __device_builtin__ ___device__(extern  __no_sc__) double fabs(double);
+#endif
+#if !defined(__CUDABE__)
+#line 485 "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt\\corecrt_math.h"
+ __device_builtin__ ___device__(extern  __no_sc__) double sqrt(double);
+#endif
+#if !defined(__CUDABE__)
+#line 507 "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt\\corecrt_math.h"
+ __device_builtin__ ___device__(extern  __no_sc__) double fmax(double, double);
+#endif
+#if !defined(__CUDABE__)
+#line 508 "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt\\corecrt_math.h"
+ __device_builtin__ ___device__(extern  __no_sc__) double fmin(double, double);
+#endif
+#if !defined(__CUDABE__)
+#line 558 "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt\\corecrt_math.h"
+ __device_builtin__ ___device__(extern  __no_sc__) float fmaxf(float, float);
+#endif
+#if !defined(__CUDABE__)
+#line 559 "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt\\corecrt_math.h"
+ __device_builtin__ ___device__(extern  __no_sc__) float fminf(float, float);
+#endif
+#if !defined(__CUDABE__)
+#line 616 "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt\\corecrt_math.h"
+ __device_builtin__ ___device__(extern  __no_sc__) float cosf(float);
+#endif
+#if !defined(__CUDABE__)
+#line 670 "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt\\corecrt_math.h"
+ __device_builtin__ ___device__(extern  __no_sc__) float fabsf(float);
+#endif
+#if !defined(__CUDABE__)
+#line 717 "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt\\corecrt_math.h"
+ __device_builtin__ ___device__(extern  __no_sc__) float sinf(float);
+#endif
+#if !defined(__CUDABE__)
+#line 719 "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt\\corecrt_math.h"
+ __device_builtin__ ___device__(extern  __no_sc__) float sqrtf(float);
+#endif
+#line 23 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cstdlib"
+___device__(extern  __no_sc__) double _Z3absd(double);
+#line 27 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cstdlib"
+___device__(extern  __no_sc__) float _Z3absf(float);
+#line 70 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+___device__(extern  __no_sc__) float _Z3cosf(float);
+#line 234 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+___device__(extern  __no_sc__) float _Z3sinf(float);
+#line 242 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+___device__(extern  __no_sc__) float _Z4sqrtf(float);
+#line 963 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+___device__(static  __no_sc__) float _ZN31_INTERNAL_14_shader_cpp1_ii_mul3minEff(float, float);
+#line 968 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+___device__(static  __no_sc__) double _ZN31_INTERNAL_14_shader_cpp1_ii_mul3minEdd(double, double);
+#line 1079 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+___device__(static  __no_sc__) float _ZN31_INTERNAL_14_shader_cpp1_ii_mul3maxEff(float, float);
+#line 1084 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+___device__(static  __no_sc__) double _ZN31_INTERNAL_14_shader_cpp1_ii_mul3maxEdd(double, double);
+#line 43 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) struct Vector mul(struct Vector, double);
+#line 49 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) struct Vector sum(struct Vector, struct Vector);
+#line 55 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) struct Vector sub(struct Vector, struct Vector);
+#line 61 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) double dot(struct Vector, struct Vector);
+#line 66 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) double distance(struct Vector, struct Vector);
+#line 71 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) struct Vector normalize(struct Vector);
+#line 79 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) double smin(double, double, double);
+#line 95 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) double cylinder(struct Vector, struct Object);
+#line 124 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) double cube(struct Object, struct Vector);
+#line 143 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) double _Z8TriPrism6Vector6Object(struct Vector, struct Object);
+#line 150 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) double distanceByType(struct Object, struct Vector);
+#line 194 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) struct DistanceDate getDist(struct Vector);
+#line 227 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) struct Vector getNormal(struct Vector);
+#line 240 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) double light(struct Vector);
+#line 253 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__(extern  __no_sc__) struct DistanceDate rayMarching(struct Vector, struct Vector);
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__global__ __var_used__ extern void draw(unsigned char *, union Data *, int, int, int, double, double, double, float, float, float, float, int, int);
+#line 38 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+static  __shared__  __var_used__ double lightIntensity;
+#line 38 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+static  __shared__  __var_used__ double lightSize;
+#line 39 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+static  __shared__  __var_used__ union Data *objects;
+#line 40 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+static  __shared__  __var_used__ int n;
+#include "common_functions.h"
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#line 23 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cstdlib"
+___device__( __no_sc__) __inline__ double _Z3absd(
+#line 23 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cstdlib"
+double _Xx){
+#line 23 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cstdlib"
+{
+#line 24 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cstdlib"
+return fabs(_Xx);
+#line 25 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cstdlib"
+}}
+#line 27 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cstdlib"
+___device__( __no_sc__) __inline__ float _Z3absf(
+#line 27 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cstdlib"
+float _Xx){
+#line 27 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cstdlib"
+{
+#line 28 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cstdlib"
+return fabsf(_Xx);
+#line 29 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cstdlib"
+}}
+#line 70 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+___device__( __no_sc__) __inline__ float _Z3cosf(
+#line 70 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+float _Xx){
+#line 70 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+{
+#line 71 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+return cosf(_Xx);
+#line 72 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+}}
+#line 234 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+___device__( __no_sc__) __inline__ float _Z3sinf(
+#line 234 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+float _Xx){
+#line 234 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+{
+#line 235 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+return sinf(_Xx);
+#line 236 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+}}
+#line 242 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+___device__( __no_sc__) __inline__ float _Z4sqrtf(
+#line 242 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+float _Xx){
+#line 242 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+{
+#line 243 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+return sqrtf(_Xx);
+#line 244 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\cmath"
+}}
+#line 963 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+___device__(static  __no_sc__) __inline__ float _ZN31_INTERNAL_14_shader_cpp1_ii_mul3minEff(
+#line 963 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+float a, 
+#line 963 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+float b){
+#line 964 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+{
+#line 965 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+return fminf(a, b);
+#line 966 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+}}
+#line 968 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+___device__(static  __no_sc__) __inline__ double _ZN31_INTERNAL_14_shader_cpp1_ii_mul3minEdd(
+#line 968 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+double a, 
+#line 968 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+double b){
+#line 969 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+{
+#line 970 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+return fmin(a, b);
+#line 971 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+}}
+#line 1079 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+___device__(static  __no_sc__) __inline__ float _ZN31_INTERNAL_14_shader_cpp1_ii_mul3maxEff(
+#line 1079 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+float a, 
+#line 1079 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+float b){
+#line 1080 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+{
+#line 1081 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+return fmaxf(a, b);
+#line 1082 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+}}
+#line 1084 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+___device__(static  __no_sc__) __inline__ double _ZN31_INTERNAL_14_shader_cpp1_ii_mul3maxEdd(
+#line 1084 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+double a, 
+#line 1084 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+double b){
+#line 1085 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+{
+#line 1086 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+return fmax(a, b);
+#line 1087 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\include\\crt\\math_functions.hpp"
+}}
+#line 43 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) struct Vector mul(
+#line 43 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector a, 
+#line 43 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+double value){
+#line 43 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 44 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298706_9_non_const_v;
+#line 44 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298706_9_non_const_v.x) = ((a.x) * value);
+#line 44 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298706_9_non_const_v.y) = ((a.y) * value);
+#line 44 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298706_9_non_const_v.z) = ((a.z) * value);
+#line 45 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return __cuda_local_var_298706_9_non_const_v;
+#line 46 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 49 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) struct Vector sum(
+#line 49 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector a, 
+#line 49 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector b){
+#line 49 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 50 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298712_9_non_const_v;
+#line 50 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298712_9_non_const_v.x) = ((a.x) + (b.x));
+#line 50 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298712_9_non_const_v.y) = ((a.y) + (b.y));
+#line 50 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298712_9_non_const_v.z) = ((a.z) + (b.z));
+#line 51 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return __cuda_local_var_298712_9_non_const_v;
+#line 52 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 55 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) struct Vector sub(
+#line 55 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector a, 
+#line 55 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector b){
+#line 55 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 56 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298718_9_non_const_v;
+#line 56 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298718_9_non_const_v.x) = ((a.x) - (b.x));
+#line 56 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298718_9_non_const_v.y) = ((a.y) - (b.y));
+#line 56 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298718_9_non_const_v.z) = ((a.z) - (b.z));
+#line 57 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return __cuda_local_var_298718_9_non_const_v;
+#line 58 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 61 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) double dot(
+#line 61 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector a, 
+#line 61 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector b){
+#line 61 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 62 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return (((a.x) * (b.x)) + ((a.y) * (b.y))) + ((a.z) * (b.z));
+#line 63 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 66 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) double distance(
+#line 66 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector a, 
+#line 66 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector b){
+#line 66 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 67 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return sqrt((((((a.x) - (b.x)) * ((a.x) - (b.x))) + (((a.y) - (b.y)) * ((a.y) - (b.y)))) + (((a.z) - (b.z)) * ((a.z) - (b.z)))));
+#line 68 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 71 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) struct Vector normalize(
+#line 71 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector a){
+#line 71 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 72 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298734_9_non_const_n;
+#line 73 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298735_9_non_const_l;
+#line 74 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298736_9_non_const_v;
+#line 72 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+memset((char *)&__cuda_local_var_298734_9_non_const_n, 0,sizeof(__cuda_local_var_298734_9_non_const_n));
+#line 72 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298734_9_non_const_n.x = (0.0);
+#line 72 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298734_9_non_const_n.y = (0.0);
+#line 72 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298734_9_non_const_n.z = (0.0);
+#line 73 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298735_9_non_const_l = (distance(a, __cuda_local_var_298734_9_non_const_n));
+#line 74 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298736_9_non_const_v.x) = ( fdivide((a.x) , __cuda_local_var_298735_9_non_const_l));
+#line 74 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298736_9_non_const_v.y) = ( fdivide((a.y) , __cuda_local_var_298735_9_non_const_l));
+#line 74 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298736_9_non_const_v.z) = ( fdivide((a.z) , __cuda_local_var_298735_9_non_const_l));
+#line 75 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return __cuda_local_var_298736_9_non_const_v;
+#line 76 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 79 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) double smin(
+#line 79 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+double a, 
+#line 79 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+double b, 
+#line 79 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+double k){
+#line 80 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 81 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298743_9_non_const_m;
+#line 86 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298748_9_non_const_h;
+#line 82 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+if (((0.5) + ( fdivide(((0.5) * (b - a)) , k))) > (1.0)) {
+#line 83 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298743_9_non_const_m = (1.0); } else  {
+#line 85 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298743_9_non_const_m = ((0.5) + ( fdivide(((0.5) * (b - a)) , k))); }
+#line 87 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+if (__cuda_local_var_298743_9_non_const_m > (0.0)) {
+#line 88 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298748_9_non_const_h = ((0.5) + ( fdivide(((0.5) * (b - a)) , k))); } else  {
+#line 90 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298748_9_non_const_h = (0.0); }
+#line 91 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return ((a * __cuda_local_var_298748_9_non_const_h) + (b * ((1.0) - __cuda_local_var_298748_9_non_const_h))) - ((k * __cuda_local_var_298748_9_non_const_h) * ((1.0) - __cuda_local_var_298748_9_non_const_h));
+#line 92 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 95 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) double cylinder(
+#line 95 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector p, 
+#line 95 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Object obj){
+#line 96 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{  struct Vector __T0;
+#line 97 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298759_9_non_const_pa;
+#line 98 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298760_9_non_const_ba;
+#line 99 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298761_9_non_const_baba;
+#line 100 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298762_9_non_const_paba;
+#line 103 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ float __cuda_local_var_298765_8_non_const_x;
+#line 105 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ float __cuda_local_var_298767_8_non_const_y;
+#line 106 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ float __cuda_local_var_298768_8_non_const_x2;
+#line 107 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ float __cuda_local_var_298769_8_non_const_y2;
+#line 108 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ float __cuda_local_var_298770_8_non_const_d;
+#line 110 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ float __cuda_local_var_298772_8_non_const_t;
+#line 97 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+memset((char *)&__cuda_local_var_298759_9_non_const_pa, 0,sizeof(__cuda_local_var_298759_9_non_const_pa));
+#line 97 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298759_9_non_const_pa = (sub(p, (obj.position)));
+#line 98 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+memset((char *)&__cuda_local_var_298760_9_non_const_ba, 0,sizeof(__cuda_local_var_298760_9_non_const_ba));
+#line 98 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298760_9_non_const_ba = (sub((obj.size), (obj.position)));
+#line 99 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298761_9_non_const_baba = (dot(__cuda_local_var_298760_9_non_const_ba, __cuda_local_var_298760_9_non_const_ba));
+#line 100 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298762_9_non_const_paba = (dot(__cuda_local_var_298759_9_non_const_pa, __cuda_local_var_298760_9_non_const_ba));
+#line 103 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{ memset((char *)&__T0, 0,sizeof(__T0)); __T0.x = (1.0); __T0.y = (1.0); __T0.z = (1.0);
+#line 103 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298765_8_non_const_x = ((float)((distance((sub((mul(__cuda_local_var_298759_9_non_const_pa, __cuda_local_var_298761_9_non_const_baba)), (mul(__cuda_local_var_298760_9_non_const_ba, __cuda_local_var_298762_9_non_const_paba)))), __T0)) - ((obj.r) * __cuda_local_var_298761_9_non_const_baba))); }
+#line 105 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298767_8_non_const_y = ((float)((_Z3absd((__cuda_local_var_298762_9_non_const_paba - (__cuda_local_var_298761_9_non_const_baba * (0.5))))) - (__cuda_local_var_298761_9_non_const_baba * (0.5))));
+#line 106 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298768_8_non_const_x2 = (__cuda_local_var_298765_8_non_const_x * __cuda_local_var_298765_8_non_const_x);
+#line 107 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298769_8_non_const_y2 = ((float)(((double)(__cuda_local_var_298767_8_non_const_y * __cuda_local_var_298767_8_non_const_y)) * __cuda_local_var_298761_9_non_const_baba));
+#line 108 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298770_8_non_const_d = ((float)((((double)(_ZN31_INTERNAL_14_shader_cpp1_ii_mul3maxEff(__cuda_local_var_298765_8_non_const_x, __cuda_local_var_298767_8_non_const_y))) < (0.0)) ? ((double)(-(_ZN31_INTERNAL_14_shader_cpp1_ii_mul3minEff(__cuda_local_var_298768_8_non_const_x2, __cuda_local_var_298769_8_non_const_y2)))) : (((((double)__cuda_local_var_298765_8_non_const_x) > (0.0)) ? ((double)__cuda_local_var_298768_8_non_const_x2) : (0.0)) + ((((double)__cuda_local_var_298767_8_non_const_y) > (0.0)) ? ((double)__cuda_local_var_298769_8_non_const_y2) : (0.0)))));
+#line 110 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298772_8_non_const_t = (0.0F);
+#line 111 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+if (__cuda_local_var_298770_8_non_const_d > (0.0F))
+#line 112 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 113 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298772_8_non_const_t = (1.0F);
+#line 114 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}
+#line 115 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+if (__cuda_local_var_298770_8_non_const_d < (0.0F))
+#line 116 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 117 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298772_8_non_const_t = (-1.0F);
+#line 118 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}
+#line 120 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return  fdivide(((double)(__cuda_local_var_298772_8_non_const_t * (_Z4sqrtf((_Z3absf(__cuda_local_var_298770_8_non_const_d)))))) , __cuda_local_var_298761_9_non_const_baba);
+#line 121 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 124 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) double cube(
+#line 124 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Object obj, 
+#line 124 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector p){
+#line 124 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{  struct Vector __T1;
+ struct Vector __T2;
+#line 126 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298788_9_non_const_d;
+#line 128 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298790_9_non_const_insideDistance;
+#line 137 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298799_9_non_const_outsideDistance;
+#line 126 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+memset((char *)&__cuda_local_var_298788_9_non_const_d, 0,sizeof(__cuda_local_var_298788_9_non_const_d));
+#line 126 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298788_9_non_const_d = (sub((((__T1.x) = (_Z3absd(((p.x) - ((obj.position).x))))) , (((__T1.y) = (_Z3absd(((p.y) - ((obj.position).y))))) , (((__T1.z) = (_Z3absd(((p.z) - ((obj.position).z))))) , __T1))), (((__T2.x) = ((obj.size).x)) , (((__T2.y) = ((obj.size).y)) , (((__T2.z) = ((obj.size).z)) , __T2)))));
+#line 128 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298790_9_non_const_insideDistance = (_ZN31_INTERNAL_14_shader_cpp1_ii_mul3minEdd((_ZN31_INTERNAL_14_shader_cpp1_ii_mul3maxEdd((__cuda_local_var_298788_9_non_const_d.x), (_ZN31_INTERNAL_14_shader_cpp1_ii_mul3maxEdd((__cuda_local_var_298788_9_non_const_d.y), (__cuda_local_var_298788_9_non_const_d.z))))), (0.0)));
+#line 130 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+if ((__cuda_local_var_298788_9_non_const_d.x) < (0.0)) {
+#line 131 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298788_9_non_const_d.x) = (0.0); }
+#line 132 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+if ((__cuda_local_var_298788_9_non_const_d.y) < (0.0)) {
+#line 133 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298788_9_non_const_d.y) = (0.0); }
+#line 134 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+if ((__cuda_local_var_298788_9_non_const_d.z) < (0.0)) {
+#line 135 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298788_9_non_const_d.z) = (0.0); }
+#line 137 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298799_9_non_const_outsideDistance = (sqrt(((((__cuda_local_var_298788_9_non_const_d.x) * (__cuda_local_var_298788_9_non_const_d.x)) + ((__cuda_local_var_298788_9_non_const_d.y) * (__cuda_local_var_298788_9_non_const_d.y))) + ((__cuda_local_var_298788_9_non_const_d.z) * (__cuda_local_var_298788_9_non_const_d.z)))));
+#line 139 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return __cuda_local_var_298790_9_non_const_insideDistance + __cuda_local_var_298799_9_non_const_outsideDistance;
+#line 140 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 143 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) double _Z8TriPrism6Vector6Object(
+#line 143 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector p, 
+#line 143 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Object obj){
+#line 144 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 145 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298807_9_non_const_q;
+#line 145 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298807_9_non_const_q.x) = (_Z3absd((p.x)));
+#line 145 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298807_9_non_const_q.y) = (_Z3absd((p.y)));
+#line 145 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298807_9_non_const_q.z) = (_Z3absd((p.z)));
+#line 146 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return _ZN31_INTERNAL_14_shader_cpp1_ii_mul3maxEdd(((__cuda_local_var_298807_9_non_const_q.z) - ((obj.position).y)), ((_ZN31_INTERNAL_14_shader_cpp1_ii_mul3maxEdd((((__cuda_local_var_298807_9_non_const_q.x) * (0.8660250000000000448)) + ((p.y) * (0.5))), (-(p.y)))) - (((obj.position).x) * (0.5))));
+#line 147 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 150 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) double distanceByType(
+#line 150 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Object obj, 
+#line 150 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector p){
+#line 150 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 151 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+switch ((int)(obj.Type))
+#line 151 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 152 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+case 1:
+#line 153 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return (distance(p, (obj.position))) - (obj.r);
+#line 154 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T3;
+#line 155 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+case 2:
+#line 156 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return (distance(p, (obj.position))) - (obj.r);
+#line 157 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T3;
+#line 158 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+case 3:
+#line 159 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return -((distance(p, (obj.position))) - (obj.r));
+#line 160 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T3;
+#line 161 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+case 4:
+#line 162 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return cube(obj, p);
+#line 163 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T3;
+#line 164 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+case 5:
+#line 165 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return cube(obj, p);
+#line 166 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T3;
+#line 167 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+case 6:
+#line 168 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return -(cube(obj, p));
+#line 169 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T3;
+#line 170 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+case 7:
+#line 171 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return cylinder(p, obj);
+#line 172 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T3;
+#line 173 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+case 8:
+#line 174 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return cylinder(p, obj);
+#line 175 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T3;
+#line 176 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+case 9:
+#line 177 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return -(cylinder(p, obj));
+#line 178 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T3;
+#line 179 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+case 10:
+#line 180 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return _Z8TriPrism6Vector6Object(p, obj);
+#line 181 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T3;
+#line 182 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+case 11:
+#line 183 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return _Z8TriPrism6Vector6Object(p, obj);
+#line 184 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T3;
+#line 185 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+case 12:
+#line 186 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return -(_Z8TriPrism6Vector6Object(p, obj));
+#line 187 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T3;
+#line 188 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+default:
+#line 189 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T3;
+#line 190 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+} __T3:; 
+#line 191 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 194 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) struct DistanceDate getDist(
+#line 194 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector p){
+#line 194 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 195 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ union Data *__cuda_local_var_298857_14_non_const_data;
+#line 197 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct DistanceDate __cuda_local_var_298859_15_non_const_value;
+#line 203 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298865_9_non_const_dist;
+#line 196 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298857_14_non_const_data = objects;
+#line 198 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298859_15_non_const_value.distanceValue) = (distanceByType((__cuda_local_var_298857_14_non_const_data->obj), p));
+#line 199 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298859_15_non_const_value.r) = ((__cuda_local_var_298857_14_non_const_data->obj).R);
+#line 200 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298859_15_non_const_value.g) = ((__cuda_local_var_298857_14_non_const_data->obj).G);
+#line 201 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298859_15_non_const_value.b) = ((__cuda_local_var_298857_14_non_const_data->obj).B);
+#line 203 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298865_9_non_const_dist = (__cuda_local_var_298859_15_non_const_value.distanceValue);
+#line 205 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 205 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ int i;
+#line 205 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+i = 1;
+#line 205 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+for (; (i < n); i++)
+#line 206 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 207 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298857_14_non_const_data = ((union Data *)(((uintptr_t)__cuda_local_var_298857_14_non_const_data) + 64ULL));
+#line 208 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298865_9_non_const_dist = (distanceByType((__cuda_local_var_298857_14_non_const_data->obj), p));
+#line 209 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+if (((__cuda_local_var_298859_15_non_const_value.distanceValue) > __cuda_local_var_298865_9_non_const_dist) && (((((int)((__cuda_local_var_298857_14_non_const_data->obj).Type)) % 3) == 1) || (((int)((__cuda_local_var_298857_14_non_const_data->obj).Type)) == 0)))
+#line 209 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 210 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298859_15_non_const_value.distanceValue) = __cuda_local_var_298865_9_non_const_dist;
+#line 211 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298859_15_non_const_value.r) = ((__cuda_local_var_298857_14_non_const_data->obj).R);
+#line 212 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298859_15_non_const_value.g) = ((__cuda_local_var_298857_14_non_const_data->obj).G);
+#line 213 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298859_15_non_const_value.b) = ((__cuda_local_var_298857_14_non_const_data->obj).B);
+#line 214 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}
+#line 215 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+if (((__cuda_local_var_298859_15_non_const_value.distanceValue) <= __cuda_local_var_298865_9_non_const_dist) && ((((int)((__cuda_local_var_298857_14_non_const_data->obj).Type)) % 3) != 1))
+#line 215 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 216 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298859_15_non_const_value.distanceValue) = __cuda_local_var_298865_9_non_const_dist;
+#line 217 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298859_15_non_const_value.r) = ((__cuda_local_var_298857_14_non_const_data->obj).R);
+#line 218 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298859_15_non_const_value.g) = ((__cuda_local_var_298857_14_non_const_data->obj).G);
+#line 219 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298859_15_non_const_value.b) = ((__cuda_local_var_298857_14_non_const_data->obj).B);
+#line 220 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}
+#line 221 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+} }
+#line 223 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return __cuda_local_var_298859_15_non_const_value;
+#line 224 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 227 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) struct Vector getNormal(
+#line 227 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector p){
+#line 228 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{  struct DistanceDate __T4;
+ struct DistanceDate __T5;
+ struct Vector __T6;
+ struct DistanceDate __T7;
+ struct Vector __T8;
+ struct DistanceDate __T9;
+ struct Vector __T10;
+#line 229 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298891_9_non_const_d;
+#line 230 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298892_9_non_const_p1;
+#line 231 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298893_9_non_const_p2;
+#line 232 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298894_9_non_const_p3;
+#line 233 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298895_9_non_const_tri;
+#line 234 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298896_9_non_const_di;
+#line 235 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298897_9_non_const_n;
+#line 229 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298891_9_non_const_d = ((__T4 = (getDist(p))) , (__T4.distanceValue));
+#line 230 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{ memset((char *)&__T6, 0,sizeof(__T6)); __T6.x = (0.001000000000000000021); __T6.y = (0.0); __T6.z = (0.0);
+#line 230 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298892_9_non_const_p1 = ((__T5 = (getDist((sub(p, __T6))))) , (__T5.distanceValue)); }
+#line 231 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{ memset((char *)&__T8, 0,sizeof(__T8)); __T8.x = (0.0); __T8.y = (0.001000000000000000021); __T8.z = (0.0);
+#line 231 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298893_9_non_const_p2 = ((__T7 = (getDist((sub(p, __T8))))) , (__T7.distanceValue)); }
+#line 232 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{ memset((char *)&__T10, 0,sizeof(__T10)); __T10.x = (0.0); __T10.y = (0.0); __T10.z = (0.001000000000000000021);
+#line 232 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298894_9_non_const_p3 = ((__T9 = (getDist((sub(p, __T10))))) , (__T9.distanceValue)); }
+#line 233 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298895_9_non_const_tri.x) = __cuda_local_var_298892_9_non_const_p1;
+#line 233 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298895_9_non_const_tri.y) = __cuda_local_var_298893_9_non_const_p2;
+#line 233 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298895_9_non_const_tri.z) = __cuda_local_var_298894_9_non_const_p3;
+#line 234 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298896_9_non_const_di.x) = __cuda_local_var_298891_9_non_const_d;
+#line 234 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298896_9_non_const_di.y) = __cuda_local_var_298891_9_non_const_d;
+#line 234 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298896_9_non_const_di.z) = __cuda_local_var_298891_9_non_const_d;
+#line 235 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+memset((char *)&__cuda_local_var_298897_9_non_const_n, 0,sizeof(__cuda_local_var_298897_9_non_const_n));
+#line 235 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298897_9_non_const_n = (sub(__cuda_local_var_298896_9_non_const_di, __cuda_local_var_298895_9_non_const_tri));
+#line 236 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return normalize(__cuda_local_var_298897_9_non_const_n);
+#line 237 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 240 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) double light(
+#line 240 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector p){
+#line 240 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 241 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298903_9_non_const_lightPos;
+#line 242 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298904_9_non_const_lightDir;
+#line 243 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298905_9_non_const_normal;
+#line 245 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298907_9_non_const_lI;
+#line 246 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298908_9_non_const_lS;
+#line 248 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298910_9_non_const_dif;
+#line 241 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+memset((char *)&__cuda_local_var_298903_9_non_const_lightPos, 0,sizeof(__cuda_local_var_298903_9_non_const_lightPos));
+#line 241 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298903_9_non_const_lightPos.x = (-5.0);
+#line 241 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298903_9_non_const_lightPos.y = (5.0);
+#line 241 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298903_9_non_const_lightPos.z = (-10.0);
+#line 242 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+memset((char *)&__cuda_local_var_298904_9_non_const_lightDir, 0,sizeof(__cuda_local_var_298904_9_non_const_lightDir));
+#line 242 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298904_9_non_const_lightDir = (normalize((sub(__cuda_local_var_298903_9_non_const_lightPos, p))));
+#line 243 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+memset((char *)&__cuda_local_var_298905_9_non_const_normal, 0,sizeof(__cuda_local_var_298905_9_non_const_normal));
+#line 243 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298905_9_non_const_normal = (getNormal(p));
+#line 245 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298907_9_non_const_lI = lightIntensity;
+#line 246 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298908_9_non_const_lS = lightSize;
+#line 248 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298910_9_non_const_dif = ((((dot(__cuda_local_var_298905_9_non_const_normal, __cuda_local_var_298904_9_non_const_lightDir)) * ((1.0) - __cuda_local_var_298908_9_non_const_lS)) * __cuda_local_var_298907_9_non_const_lI) + (__cuda_local_var_298908_9_non_const_lS * __cuda_local_var_298907_9_non_const_lI));
+#line 249 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return __cuda_local_var_298910_9_non_const_dif;
+#line 250 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 253 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+___device__( __no_sc__) struct DistanceDate rayMarching(
+#line 253 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector ro, 
+#line 253 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+struct Vector rd){
+#line 253 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{ static const struct DistanceDate __T11 = {(0.0),((unsigned char)0U),((unsigned char)0U),((unsigned char)0U)};
+ struct DistanceDate __T12;
+#line 254 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298916_9_non_const_p;
+#line 254 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298916_9_non_const_p.x) = (ro.x);
+#line 254 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298916_9_non_const_p.y) = (ro.y);
+#line 254 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298916_9_non_const_p.z) = (ro.z);
+#line 255 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 255 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ int i;
+#line 255 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+i = 0;
+#line 255 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+for (; (i < 300); i++)
+#line 255 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 256 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct DistanceDate __cuda_local_var_298918_16_non_const_d;
+#line 256 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+memset((char *)&__cuda_local_var_298918_16_non_const_d, 0,sizeof(__cuda_local_var_298918_16_non_const_d));
+#line 256 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298918_16_non_const_d = (getDist(__cuda_local_var_298916_9_non_const_p));
+#line 257 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+if ((__cuda_local_var_298918_16_non_const_d.distanceValue) > (100.0)) {
+#line 258 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+goto __T13; }
+#line 259 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298916_9_non_const_p = (sum(__cuda_local_var_298916_9_non_const_p, (mul(rd, (__cuda_local_var_298918_16_non_const_d.distanceValue)))));
+#line 260 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+if ((__cuda_local_var_298918_16_non_const_d.distanceValue) < (0.001000000000000000021))
+#line 260 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{  struct DistanceDate __T14;
+#line 261 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 261 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__T14.distanceValue) = (light(__cuda_local_var_298916_9_non_const_p));
+#line 261 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__T14.r) = (__cuda_local_var_298918_16_non_const_d.r);
+#line 261 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__T14.g) = (__cuda_local_var_298918_16_non_const_d.g);
+#line 261 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__T14.b) = (__cuda_local_var_298918_16_non_const_d.b);
+#line 261 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return __T14; }
+#line 262 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}
+#line 263 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+} } __T13:;
+#line 264 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 264 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__T12 = __T11;
+#line 264 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return __T12; }
+#line 265 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__global__ __var_used__ void draw(
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+unsigned char *data, 
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+union Data *input, 
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+int on, 
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+int widht, 
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+int height, 
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+double camX, 
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+double camY, 
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+double camZ, 
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+float vA, 
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+float hA, 
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+float lI, 
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+float lS, 
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+int pn, 
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+int pc){
+#line 268 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{  struct Vector __T15;
+ struct Vector __T16;
+ struct Vector __T17;
+#line 269 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ int __cuda_local_var_298931_6_non_const_x;
+#line 270 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ int __cuda_local_var_298932_6_non_const_y;
+#line 277 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298939_9_non_const_qx;
+#line 278 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298940_9_non_const_qy;
+#line 284 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct Vector __cuda_local_var_298946_9_non_const_rd;
+#line 287 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298949_9_non_const_s;
+#line 288 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ double __cuda_local_var_298950_9_non_const_c;
+#line 294 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+ struct DistanceDate __cuda_local_var_298956_15_non_const_col;
+#line 269 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298931_6_non_const_x = ((int)(((blockIdx.x) * (blockDim.x)) + (threadIdx.x)));
+#line 270 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298932_6_non_const_y = ((int)((((unsigned)((height / pc) * pn)) + ((blockIdx.y) * (blockDim.y))) + (threadIdx.y)));
+#line 271 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+if ((__cuda_local_var_298931_6_non_const_x >= widht) || (__cuda_local_var_298932_6_non_const_y >= height)) {
+#line 272 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+return; }
+#line 274 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+objects = input;
+#line 275 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+n = on;
+#line 277 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298939_9_non_const_qx = ((( fdivide(((double)__cuda_local_var_298931_6_non_const_x) , ((double)widht))) * (2.0)) - (1.0));
+#line 278 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298940_9_non_const_qy = ((( fdivide(((double)__cuda_local_var_298932_6_non_const_y) , ((double)height))) * (2.0)) - (1.0));
+#line 280 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+lightIntensity = ((double)lI);
+#line 281 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+lightSize = ((double)lS);
+#line 283 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298939_9_non_const_qx = (__cuda_local_var_298939_9_non_const_qx * ( fdivide(((double)widht) , ((double)height))));
+#line 284 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+memset((char *)&__cuda_local_var_298946_9_non_const_rd, 0,sizeof(__cuda_local_var_298946_9_non_const_rd));
+#line 284 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298946_9_non_const_rd.x = (1.0);
+#line 284 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298946_9_non_const_rd.y = (0.0);
+#line 284 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298946_9_non_const_rd.z = (0.0);
+#line 284 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298946_9_non_const_rd.y) = __cuda_local_var_298939_9_non_const_qx;
+#line 284 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(__cuda_local_var_298946_9_non_const_rd.z) = __cuda_local_var_298940_9_non_const_qy;
+#line 285 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298946_9_non_const_rd = (normalize(__cuda_local_var_298946_9_non_const_rd));
+#line 287 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298949_9_non_const_s = ((double)(_Z3sinf(vA)));
+#line 288 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298950_9_non_const_c = ((double)(_Z3cosf(vA)));
+#line 289 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298946_9_non_const_rd = (((__T15.x) = ((__cuda_local_var_298950_9_non_const_c * (__cuda_local_var_298946_9_non_const_rd.x)) + ((-__cuda_local_var_298949_9_non_const_s) * (__cuda_local_var_298946_9_non_const_rd.z)))) , (((__T15.y) = (__cuda_local_var_298946_9_non_const_rd.y)) , (((__T15.z) = ((__cuda_local_var_298949_9_non_const_s * (__cuda_local_var_298946_9_non_const_rd.x)) + (__cuda_local_var_298950_9_non_const_c * (__cuda_local_var_298946_9_non_const_rd.z)))) , __T15)));
+#line 290 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298949_9_non_const_s = ((double)(_Z3sinf(hA)));
+#line 291 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298950_9_non_const_c = ((double)(_Z3cosf(hA)));
+#line 292 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298946_9_non_const_rd = (((__T16.x) = ((__cuda_local_var_298950_9_non_const_c * (__cuda_local_var_298946_9_non_const_rd.x)) + ((-__cuda_local_var_298949_9_non_const_s) * (__cuda_local_var_298946_9_non_const_rd.y)))) , (((__T16.y) = ((__cuda_local_var_298949_9_non_const_s * (__cuda_local_var_298946_9_non_const_rd.x)) + (__cuda_local_var_298950_9_non_const_c * (__cuda_local_var_298946_9_non_const_rd.y)))) , (((__T16.z) = (__cuda_local_var_298946_9_non_const_rd.z)) , __T16)));
+#line 294 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+memset((char *)&__cuda_local_var_298956_15_non_const_col, 0,sizeof(__cuda_local_var_298956_15_non_const_col));
+#line 294 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+__cuda_local_var_298956_15_non_const_col = (rayMarching((((__T17.x) = camX) , (((__T17.y) = camY) , (((__T17.z) = camZ) , __T17))), __cuda_local_var_298946_9_non_const_rd));
+#line 295 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+if ((__cuda_local_var_298956_15_non_const_col.distanceValue) != (0.0))
+#line 295 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 296 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(data[(((widht * 3) * __cuda_local_var_298932_6_non_const_y) + (3 * __cuda_local_var_298931_6_non_const_x))]) = ((unsigned char)(((double)(__cuda_local_var_298956_15_non_const_col.r)) * (__cuda_local_var_298956_15_non_const_col.distanceValue)));
+#line 297 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(data[((((widht * 3) * __cuda_local_var_298932_6_non_const_y) + (3 * __cuda_local_var_298931_6_non_const_x)) + 1)]) = ((unsigned char)(((double)(__cuda_local_var_298956_15_non_const_col.g)) * (__cuda_local_var_298956_15_non_const_col.distanceValue)));
+#line 298 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(data[((((widht * 3) * __cuda_local_var_298932_6_non_const_y) + (3 * __cuda_local_var_298931_6_non_const_x)) + 2)]) = ((unsigned char)(((double)(__cuda_local_var_298956_15_non_const_col.b)) * (__cuda_local_var_298956_15_non_const_col.distanceValue)));
+#line 299 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}
+#line 301 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+else 
+#line 301 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+{
+#line 302 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(data[(((widht * 3) * __cuda_local_var_298932_6_non_const_y) + (3 * __cuda_local_var_298931_6_non_const_x))]) = ((unsigned char)((117.0) * ((double)lI)));
+#line 303 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(data[((((widht * 3) * __cuda_local_var_298932_6_non_const_y) + (3 * __cuda_local_var_298931_6_non_const_x)) + 1)]) = ((unsigned char)((187.0) * ((double)lI)));
+#line 304 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+(data[((((widht * 3) * __cuda_local_var_298932_6_non_const_y) + (3 * __cuda_local_var_298931_6_non_const_x)) + 2)]) = ((unsigned char)((253.0) * ((double)lI)));
+#line 305 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+} 
+#line 307 "C:/Users/Иван/source/repos/Shaders/shader.cu"
+}}

@@ -1,0 +1,2 @@
+C:\Users\Иван\source\repos\Shaders\x64\Debug\Shaders.exe
+C:\Users\Иван\source\repos\Shaders\x64\Debug\Shaders.pdb

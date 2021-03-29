@@ -1,0 +1,199 @@
+typedef char __nv_bool;
+#line 193 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.25.28610\\include\\vcruntime.h"
+typedef unsigned long long size_t;
+#include "crt/device_runtime.h"
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+__global__ __var_used__ extern void get(unsigned char *, unsigned char *, unsigned char *, unsigned char *, unsigned char *, unsigned char *, unsigned char *, unsigned char *, int, int, unsigned char *);
+#include "common_functions.h"
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+__global__ __var_used__ void get(
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+unsigned char *data1, 
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+unsigned char *data2, 
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+unsigned char *data3, 
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+unsigned char *data4, 
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+unsigned char *data5, 
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+unsigned char *data6, 
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+unsigned char *data7, 
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+unsigned char *data8, 
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+int widht, 
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+int height, 
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+unsigned char *data){
+#line 2 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 4 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+ int __cuda_local_var_298650_6_non_const_x;
+#line 4 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+__cuda_local_var_298650_6_non_const_x = ((int)(((blockIdx.x) * (blockDim.x)) + (threadIdx.x)));
+#line 5 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+if (__cuda_local_var_298650_6_non_const_x >= widht) {
+#line 6 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+return; }
+#line 8 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 8 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+ size_t i;
+#line 8 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+i = 0ULL;
+#line 8 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+for (; (i < ((unsigned long long)(height / 8))); i++)
+#line 9 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 11 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]) = (data1[((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]);
+#line 12 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 1ULL)]) = (data1[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 3ULL)]);
+#line 13 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]) = (data1[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]);
+#line 14 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+} }
+#line 15 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 15 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+ size_t i;
+#line 15 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+i = 0ULL;
+#line 15 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+for (; (i < ((unsigned long long)(height / 8))); i++)
+#line 16 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 17 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[((((unsigned long long)(100 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]) = (data2[((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]);
+#line 18 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(100 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 1ULL)]) = (data2[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 3ULL)]);
+#line 19 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(100 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]) = (data2[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]);
+#line 20 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+} }
+#line 21 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 21 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+ size_t i;
+#line 21 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+i = 0ULL;
+#line 21 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+for (; (i < ((unsigned long long)(height / 8))); i++)
+#line 22 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 23 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[((((unsigned long long)(200 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]) = (data3[((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]);
+#line 24 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(200 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 1ULL)]) = (data3[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 3ULL)]);
+#line 25 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(200 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]) = (data3[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]);
+#line 26 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+} }
+#line 27 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 27 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+ size_t i;
+#line 27 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+i = 0ULL;
+#line 27 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+for (; (i < ((unsigned long long)(height / 8))); i++)
+#line 28 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 29 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[((((unsigned long long)(300 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]) = (data4[((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]);
+#line 30 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(300 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 1ULL)]) = (data4[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 3ULL)]);
+#line 31 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(300 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]) = (data4[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]);
+#line 32 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+} }
+#line 33 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 33 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+ size_t i;
+#line 33 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+i = 0ULL;
+#line 33 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+for (; (i < ((unsigned long long)(height / 8))); i++)
+#line 34 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 35 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[((((unsigned long long)(400 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]) = (data5[((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]);
+#line 36 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(400 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 1ULL)]) = (data5[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 3ULL)]);
+#line 37 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(400 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]) = (data5[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]);
+#line 38 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+} }
+#line 39 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 39 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+ size_t i;
+#line 39 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+i = 0ULL;
+#line 39 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+for (; (i < ((unsigned long long)(height / 8))); i++)
+#line 40 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 41 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[((((unsigned long long)(500 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]) = (data6[((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]);
+#line 42 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(500 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 1ULL)]) = (data6[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 3ULL)]);
+#line 43 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(500 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]) = (data6[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]);
+#line 44 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+} }
+#line 45 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 45 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+ size_t i;
+#line 45 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+i = 0ULL;
+#line 45 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+for (; (i < ((unsigned long long)(height / 8))); i++)
+#line 46 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 47 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[((((unsigned long long)(600 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]) = (data7[((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]);
+#line 48 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(600 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 1ULL)]) = (data7[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 3ULL)]);
+#line 49 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(600 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]) = (data7[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]);
+#line 50 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+} }
+#line 51 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 51 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+ size_t i;
+#line 51 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+i = 0ULL;
+#line 51 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+for (; (i < ((unsigned long long)(height / 8))); i++)
+#line 52 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+{
+#line 53 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[((((unsigned long long)(700 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]) = (data8[((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x)))]);
+#line 54 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(700 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 1ULL)]) = (data8[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 3ULL)]);
+#line 55 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+(data[(((((unsigned long long)(700 * widht)) + (((unsigned long long)widht) * i)) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]) = (data8[(((((unsigned long long)widht) * i) + ((unsigned long long)(3 * __cuda_local_var_298650_6_non_const_x))) + 2ULL)]);
+#line 56 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+} } 
+#line 57 "C:/Users/Иван/source/repos/Shaders/GetRendered.cu"
+}}
